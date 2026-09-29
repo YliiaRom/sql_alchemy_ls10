@@ -1,0 +1,39 @@
+[
+  {
+    "title": "install",
+    "link": "https://docs.sqlalchemy.org/en/21/intro.html#installation",
+    "description": "uv add sqlalchemy",
+    "color_checker": "green"
+  },
+  {
+    "title": "create_engine",
+    "link": "https://docs.sqlalchemy.org/en/21/orm/quickstart.html",
+    "description": "engine = create_engine(\"sqlite:///./tasks.db\", echo=True)",
+    "color_checker": "green"
+  },
+
+  {
+    "title": "sessionmaker",
+    "link": "https://docs.sqlalchemy.org/en/21/orm/session_api.html#sqlalchemy.orm.sessionmaker",
+    "description": "Діє як фабрика для Session | SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)",
+    "color_checker": "green"
+  },
+  {
+    "title": "DeclarativeBase",
+    "link": "https://docs.sqlalchemy.org/en/21/orm/quickstart.html#declare-models",
+    "description": "class Base(DeclarativeBase):...",
+    "color_checker": "red"
+  },
+  {
+    "title": " Mapped[...]",
+    "link": "https://docs.sqlalchemy.org/en/21/orm/basic_relationships.html",
+    "description": "Анотації типів",
+    "color_checker": "red"
+  },
+  {
+    "title": "mapped_column()",
+    "link": "https://docs.sqlalchemy.org/en/21/orm/basic_relationships.html",
+    "description": "Оголосити нову конструкцію Column, явно вказавши її тип разом із типом-анотацією Mapped. Це дозволяє SQLAlchemy визначити SQL-тип колонки та чи може вона містити NULL, використовуючи інформацію з анотації Mapped",
+    "color_checker": "red"
+  }
+]

@@ -1,0 +1,46 @@
+{%extends "base.html"%} {%block content%}
+
+<h1>{{main_title}}</h1>
+<form action="/tasks/" method="post" class="form">
+  <label for="title"
+    >Task <input type="text" id="title" name="title" placeholder="xxxxx"
+  /></label>
+  <label for="description"
+    >Description
+    <input
+      type="text"
+      id="description"
+      name="description"
+      placeholder="description...."
+  /></label>
+  <button type="submit">Додати task</button>
+</form>
+
+<div class="components-container">
+  {%if tasks%}
+  <ul class="component-list">
+    {%for task in tasks%}
+    <li class="component-item">
+      <a href="/tasks/{{task.id}}/edit" target="_blank">
+        <button type="button">✏️</button>
+      </a>
+
+      <div class="content-box">
+        <p>{{task.title}}</p>
+        <p>{{task.description}}</p>
+        <form action="/tasks/{{task.id}}/delete" method="post">
+          <button class="btn-del" type="submit">Del 🗑️</button>
+        </form>
+      </div>
+    </li>
+
+    {%endfor%}
+  </ul>
+
+  {%else%}
+  <p>✅ Тут відображатимуться Ваші завдання</p>
+
+  {%endif%}
+</div>
+
+{%endblock%}

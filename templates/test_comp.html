@@ -1,0 +1,42 @@
+<div class="components-container">
+  {%if components%}
+  <ul class="component-list">
+    {%for item in components%}
+    <li class="component-item">
+      <a href="{{item.link}}" target="_blank"
+        ><button class="btn-component">link</button>
+      </a>
+      <div class="content-box">
+        <p>
+          <span style="border: 2px solid {{item.color_checker.value}}"></span
+          >{{item.title}}
+        </p>
+        <p>{{item.description}}</p>
+      </div>
+    </li>
+
+    {%endfor%}
+  </ul>
+  {%else%} {%if base_components%}
+
+  <ul class="component-list">
+    {%for item in base_components%}
+    <li class="component-item">
+      <a href="{{item.link}}" target="_blank"
+        ><button class="btn-component">link</button>
+      </a>
+      <div class="content-box">
+        <p>
+          <span style="border: 2px solid {{item.color_checker}}"></span
+          >{{item.title}}
+        </p>
+        <p>{{item.description}}</p>
+      </div>
+    </li>
+
+    {%endfor%}
+  </ul>
+  {%else%}
+  <p>Файл json не підвантажився</p>
+  {%endif%} {%endif%}
+</div>

@@ -1,0 +1,24 @@
+{%extends "base.html"%} {%block content%}
+<div class="components-container">
+  <h1>Update Note</h1>
+  {%if task%}
+  <form action="/tasks/{{task.id}}/edit" method="post" class="form">
+    <label for="title"
+      >Title <input type="text" name="title" id="title" value="{{task.title}}"
+    /></label>
+    <label for="description"
+      >Description
+      <input
+        type="text"
+        name="description"
+        id="description"
+        value="{{task.description}}"
+    /></label>
+    <button type="submit">Змінити</button>
+  </form>
+
+  {%else%}
+  <p>такого ID не існує</p>
+  {%endif%}
+</div>
+{%endblock%}
